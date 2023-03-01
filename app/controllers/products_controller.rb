@@ -10,7 +10,12 @@ class ProductsController < ApplicationController
   end
 
   def product2
-    @product = Product.
-      render template: "products/show"
+    @product = Product.second
+    render template: "products/show"
+  end
+
+  def product3
+    @product = Product.third
+    render template: "products/show"
   end
 end
