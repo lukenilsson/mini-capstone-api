@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def product1
-    @product = Product.first
+    @product = Product.find_by(id: params[:id])
     render template: "products/show"
   end
 

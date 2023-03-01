@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get "/products", controller: "products", action: "all_products"
 
-  get "/product1", controller: "products", action: "product1"
+  get "/product1/:id", controller: "products", action: "product1"
 
   get "/product2", controller: "products", action: "product2"
 
