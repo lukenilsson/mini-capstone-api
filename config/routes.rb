@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # get "/product1/:id", controller: "products", action: "product1"
   get "/products/:id" => "products#show"
   # get "/product2", controller: "products", action: "product2"
-
+  post "/products" => "products#create"
   # get "/product3", controller: "products", action: "product3"
 end
