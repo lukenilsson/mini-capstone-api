@@ -13,3 +13,16 @@ Content-Type: application/json
   "image_url": "moonshoes.jpg",
   "price": 35,
   "description": "Bounce to da moooon!"}
+
+###
+
+PATCH http://localhost:3000/products/1.json
+Content-Type: application/json
+
+{"name": "Hacky Sack",
+  "image_url": "chillbro.jpg",
+  "price": 5,
+  "description": "So chill bro...so chill"}
+
+###
+DELETE http://localhost:3000/products/4.json 
