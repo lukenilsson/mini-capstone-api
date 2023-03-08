@@ -15,9 +15,17 @@ class ProductsController < ApplicationController
       image_url: params[:image_url],
       price: params[:price],
       description: params[:description],
+      stock: params[:stock],
     )
+
     @product.save
-    render :show
+
+    if @product.valid?
+      render :show
+    else
+      @product.errors.full_messages
+      render json: { message: "Boo! You stink!" }
+    end
   end
 
   def update
@@ -27,9 +35,15 @@ class ProductsController < ApplicationController
       image_url: params[:image_url] || @product.image_url,
       price: params[:price] || @product.price,
       description: params[:description] || @product.description,
+      stock: params[:stock] || @product.stock,
     )
     @product.save
-    render :show
+    if @product.valid?
+      render :show
+    else
+      @product.errors.full_messages
+      render json: { message: "Boo! You stink!" }
+    end
   end
 
   def destroy
