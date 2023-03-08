@@ -14,11 +14,11 @@ class Product < ApplicationRecord
   def total
     return price + tax
   end
+
   def supplier
     Supplier.find_by(id: supplier_id)
   end
 
-  
   # validates :name, presence: true,
   # validates :name, length: {maximum: 12},
   # validatws :name, uniqueness: true,
