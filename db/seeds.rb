@@ -20,3 +20,18 @@
 #   phone_number: "631.878.5555",
 # )
 # supplier.save
+
+image = Image.new(
+  url: "https://upload.wikimedia.org/wikipedia/en/7/70/Furby_picture.jpg",
+)
+image.save
+
+image = Image.new(
+  url: "https://i.ebayimg.com/images/g/FuMAAOSwDEZj8Cxv/s-l1600.jpg",
+)
+image.save
+
+image = Image.new(
+  url: "https://64.media.tumblr.com/8748e0bc67352fce56bdffdf699c5dfb/tumblr_onfcdyqyjN1uoew7wo1_1280.jpg",
+)
+image.save

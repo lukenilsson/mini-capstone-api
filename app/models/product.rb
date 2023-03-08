@@ -18,7 +18,7 @@ class Product < ApplicationRecord
   def supplier
     Supplier.find_by(id: supplier_id)
   end
-
+  def image
   # validates :name, presence: true,
   # validates :name, length: {maximum: 12},
   # validatws :name, uniqueness: true,
