@@ -36,3 +36,22 @@ Content-Type: application/json
   "password": "Telecaster70",
   "password_confirmation": "Telecaster70"
 }
+
+###
+
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{"email": "Rob@example.com",
+  "password": "Pearl4"
+}
+
+###
+POST http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjozLCJleHAiOjE2Mjk5OTI4NjR9.G2ExsrDYn3oE0vJkvm4T6Po2GbNpH5cqTEaVPVuK_MA
+Content-Type: application/json
+
+# {
+#   "name": "Paul McCartney"
+  
+# }
