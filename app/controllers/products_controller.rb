@@ -11,8 +11,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(
+      supplier_id: params[:supplier_id],
       name: params[:name],
-      image_url: params[:image_url],
       price: params[:price],
       description: params[:description],
       stock: params[:stock],
@@ -21,10 +21,10 @@ class ProductsController < ApplicationController
     @product.save
 
     if @product.valid?
+      Image.create(product_id: @product_id, url: params[:image_url])
       render :show
     else
-      @product.errors.full_messages
-      render json: { message: "Boo! You stink!" }
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -32,7 +32,6 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     @product.update(
       name: params[:name] || @product.name,
-      image_url: params[:image_url] || @product.image_url,
       price: params[:price] || @product.price,
       description: params[:description] || @product.description,
       stock: params[:stock] || @product.stock,
@@ -41,8 +40,7 @@ class ProductsController < ApplicationController
     if @product.valid?
       render :show
     else
-      @product.errors.full_messages
-      render json: { message: "Boo! You stink!" }
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

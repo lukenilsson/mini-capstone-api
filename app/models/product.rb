@@ -1,4 +1,8 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
+
+  has_many :images
+
   def is_discounted?
     if price <= 10
       return true
@@ -15,10 +19,6 @@ class Product < ApplicationRecord
     return price + tax
   end
 
-  def supplier
-    Supplier.find_by(id: supplier_id)
-  end
-  def image
   # validates :name, presence: true,
   # validates :name, length: {maximum: 12},
   # validatws :name, uniqueness: true,

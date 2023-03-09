@@ -1,5 +1,3 @@
 class Supplier < ApplicationRecord
-  def products
-    Product.where(product_id: id)
-  end
+has_many :products
 end
