@@ -51,7 +51,18 @@ POST http://localhost:3000/products.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjozLCJleHAiOjE2Mjk5OTI4NjR9.G2ExsrDYn3oE0vJkvm4T6Po2GbNpH5cqTEaVPVuK_MA
 Content-Type: application/json
 
-# {
-#   "name": "Paul McCartney"
-  
-# }
+###
+
+POST http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjozLCJleHAiOjE2Mjk5OTI4NjR9.G2ExsrDYn3oE0vJkvm4T6Po2GbNpH5cqTEaVPVuK_MA
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "product_id": 1,
+  "quantity": 1,
+  "subtotal": 1,
+  "tax": 1,
+  "total": 1
+
+}
