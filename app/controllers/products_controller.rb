@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!,
-  except: [:index. :show]
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @products = Product.all
     render :index
@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if current_user && current_user.admin
     @product = Product.new(
       supplier_id: params[:supplier_id],
       name: params[:name],
@@ -20,6 +19,7 @@ class ProductsController < ApplicationController
       description: params[:description],
       stock: params[:stock],
     )
+
     if @product.valid?
       Image.create(product_id: @product_id, url: params[:image_url])
       render :show
@@ -27,26 +27,29 @@ class ProductsController < ApplicationController
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
   end
+end
 
-  def update
-    @product = Product.find_by(id: params[:id])
-    @product.update(
-      name: params[:name] || @product.name,
-      price: params[:price] || @product.price,
-      description: params[:description] || @product.description,
-      stock: params[:stock] || @product.stock,
-    )
-    @product.save
-    if @product.valid?
-      render :show
-    else
-      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
-    end
+def update
+  @product = Product.find_by(id: params[:id])
+  @product.update(
+    name: params[:name] || @product.name,
+    price: params[:price] || @product.price,
+    description: params[:description] || @product.description,
+    stock: params[:stock] || @product.stock,
+  )
+  @product.save
+  if @product.valid?
+    render :show
+  else
+    render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
   end
+end
 
-  def destroy
-    @product = Product.find_by(id: params[:id])
-    @product.destroy
-    render json: { message: "Byeeeeeee" }
-  end
+def destroy
+  @product = Product.find_by(id: params[:id])
+  @product.destroy
+  render json: { message: "Byeeeeeee" }
+end
+
+def authenticate_user
 end
