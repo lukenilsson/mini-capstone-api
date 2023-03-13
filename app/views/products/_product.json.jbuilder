@@ -10,4 +10,5 @@ json.tax product.tax
 json.total product.total
 json.description product.description
 json.supplier product.supplier
+# json.quantity product.quantity
 # json.url product.url

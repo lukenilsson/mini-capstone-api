@@ -42,8 +42,8 @@ Content-Type: application/json
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
-{"email": "Rob@example.com",
-  "password": "Pearl4"
+{"email": "macca@example.com",
+  "password": "Hofner69"
 }
 
 ###
@@ -54,15 +54,13 @@ Content-Type: application/json
 ###
 
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjozLCJleHAiOjE2Mjk5OTI4NjR9.G2ExsrDYn3oE0vJkvm4T6Po2GbNpH5cqTEaVPVuK_MA
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Nzg4MTY4NTF9.xaA8Ef_DEWxAOffDrTau7LuoEVlZFd4riqxw_jUK5AM
 Content-Type: application/json
 
 {
-  "user_id": 1,
   "product_id": 1,
-  "quantity": 1,
+  "stock": 1,
   "subtotal": 1,
   "tax": 1,
-  "total": 1
-
+  "total": 2
 }
