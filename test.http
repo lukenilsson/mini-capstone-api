@@ -31,10 +31,10 @@ DELETE http://localhost:3000/products/4.json
 POST http://localhost:3000/users.json
 Content-Type: application/json
 
-{"name": "George Harrison",
-  "email": "harrisongs@example.com",
-  "password": "Telecaster70",
-  "password_confirmation": "Telecaster70"
+{"name": "Luke Nilsson",
+  "email": "luke@example.com",
+  "password": "password",
+  "password_confirmation": "password"
 }
 
 ###
