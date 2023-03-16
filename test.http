@@ -54,7 +54,7 @@ Content-Type: application/json
 ###
 
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Nzg4MTY4NTF9.xaA8Ef_DEWxAOffDrTau7LuoEVlZFd4riqxw_jUK5AM
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkwNzg3MzV9.O7WMAEiu3YdnIis29Hxs1Sc4Ho3FMgJws4riQqk88wU
 Content-Type: application/json
 
 {
@@ -66,11 +66,17 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkwNzg3MzV9.O7WMAEiu3YdnIis29Hxs1Sc4Ho3FMgJws4riQqk88wU
+
+###
 POST http://localhost:3000/carted_products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkwNzg3MzV9.O7WMAEiu3YdnIis29Hxs1Sc4Ho3FMgJws4riQqk88wU
 Content-Type: application/json
 
-{"name": "Luke Nilsson",
-  "email": "luke@example.com",
-  "password": "password",
-  "password_confirmation": "password"
+{
+    "product_id": 2,
+    "quantity": 1,
+    "status": "carted",
+    "order_id": 1
 }

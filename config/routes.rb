@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   resources :suppliers
   resources :users
   resources :sessions
+
+  post "/carted_products" => "carted_products#create"
+
+  get "/carted_products" => "carted_products#index"
 end
