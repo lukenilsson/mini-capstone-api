@@ -64,3 +64,13 @@ Content-Type: application/json
   "tax": 1,
   "total": 2
 }
+
+###
+POST http://localhost:3000/carted_products.json
+Content-Type: application/json
+
+{"name": "Luke Nilsson",
+  "email": "luke@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
