@@ -42,8 +42,8 @@ Content-Type: application/json
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
-{"email": "macca@example.com",
-  "password": "Hofner69"
+{"email": "luke@example.com",
+  "password": "password"
 }
 
 ###
@@ -54,7 +54,7 @@ Content-Type: application/json
 ###
 
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkwNzg3MzV9.O7WMAEiu3YdnIis29Hxs1Sc4Ho3FMgJws4riQqk88wU
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NzkxNTc2MTJ9.luAMOoRYUlSqJ13xs-sWijnoKlTnyrbkZ19u2hmM2jM
 Content-Type: application/json
 
 {
@@ -67,16 +67,30 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/carted_products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkwNzg3MzV9.O7WMAEiu3YdnIis29Hxs1Sc4Ho3FMgJws4riQqk88wU
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NzkxNTc2MTJ9.luAMOoRYUlSqJ13xs-sWijnoKlTnyrbkZ19u2hmM2jM
 
 ###
 POST http://localhost:3000/carted_products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkwNzg3MzV9.O7WMAEiu3YdnIis29Hxs1Sc4Ho3FMgJws4riQqk88wU
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NzkxNTc2MTJ9.luAMOoRYUlSqJ13xs-sWijnoKlTnyrbkZ19u2hmM2jM
 Content-Type: application/json
 
 {
-    "product_id": 2,
+    "product_id": 3,
     "quantity": 1,
     "status": "carted",
     "order_id": 1
+}
+
+###
+
+POST http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NzkxNTc2MTJ9.luAMOoRYUlSqJ13xs-sWijnoKlTnyrbkZ19u2hmM2jM
+Content-Type: application/json
+
+{
+  "subtotal": 1,
+  "tax": 1,
+  "total": 1,
+  "status": "carted"
+  
 }
